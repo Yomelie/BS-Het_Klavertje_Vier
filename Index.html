@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="NL">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=500, maximum-scale=1, minimum-scale=0.50, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="images/Logo.ico" />
+
+        <Title>
+            BS Het Klavertje Vier
+        </Title>
+
+        <!-- this includes css style file -->
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/index.css">
+    </head>
+    <body>
+        <!-- main title -->
+        <div class="hoofdTitel">            
+            <img src="Images/Logo.png" title="Logo: BS Het Klavertje Vier" alt="Logo.png">
+            <h1>            
+                Knesselare
+            </h1>
+        </div>
+
+        <!-- content holder -->
+        <div class="content-wrapper">
+            <h2>
+                Hier vind je verschillende oefeningen.<br/>
+            </h2>
+            <p>
+                Veel oefenplezier.
+            </p>
+
+            <button class="button1" onclick='window.location.href = "OngelijkeVerdeling.html"'
+            title="Ongelijke verdeling">Ongelijke verdeling</button>
+            <button class="button1" onclick='window.location.href = "KGV_GGD.html"'
+            title="Kleinst gemeenschappelijk veelvoud en grootste gemeenschappelijke deler">KGV en GGD</button>
+
+            
+            <!--script src="Verdeling.js"></script-->
+            <!-- sometimes you have to use this "trick" for parent element (content-wrapper) to have correct height -->
+            <div style="clear: both;"></div>
+        </div> 
+        <footer>
+            © Made by Yordi Van Nieuwenhuyse
+        </footer>
+        
+    </body>
+</html>

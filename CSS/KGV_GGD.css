@@ -1,0 +1,37 @@
+    .niveau{
+        position: relative;
+        width: 50%;
+        float: right;
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        font-weight: lighter;
+        font-size: small;
+    }
+
+    .difficulty{
+        position: relative;
+        text-align: right;
+        width: calc(50%-5px);
+        margin: 10px 0 10px 5px;
+        border-radius: 5px;
+        border: #2c415d;
+    }
+
+
+    .gegeven{
+        margin: 5px 0 15px 0;
+        font-size: 120%;
+    }
+
+    #solution label{
+        position: relative;
+        float: left;
+        width: calc(100%);
+        padding: 5px,3px,1px,3px;
+    }
+    
+    .answer{
+        float: left;
+        text-align: center;
+    }

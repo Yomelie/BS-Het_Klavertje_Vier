@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="NL">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=500, maximum-scale=1, minimum-scale=0.50, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="images/Logo.ico" />
+        
+        <Title>
+            Ongelijke verdeling
+        </Title>
+
+        <!-- this includes css style file -->
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/OngelijkeVerdeling.css">
+    </head>
+    <body>
+        <!-- main title -->
+        <h1>
+            Ongelijke verdeling
+        </h1>
+
+        <!-- content holder -->
+        <div class="content-wrapper">
+            <div class="difficulty">
+                <h3 title="één of meerdere opties zijn mogelijk.">
+                    Kies de mogelijke moeilijkheidsgraden
+                </h3>
+                <label class="difficultyButton" title="Niveau 1 = Som met 2 namen.">1
+                    <input type="checkbox" checked="checked" name="niveaux" value="1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="difficultyButton" title="Niveau 2 = Verhouding met 2 namen.">2
+                    <input type="checkbox" name="niveaux" value="2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="difficultyButton" title="Niveau 3 = Som met 3 namen.">3
+                    <input type="checkbox" name="niveaux" value="3">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="difficultyButton" title="Niveau 4 = Verhouding met 3 namen.">4
+                    <input type="checkbox" name="niveaux" value="4">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="difficultyButton" title="Niveau 5 = Moeilijke som met 3 namen.">5
+                    <input type="checkbox" name="niveaux" value="5">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="difficultyButton" title="Niveau 6 = Moeilijke verhouding met 3 namen.">6
+                    <input type="checkbox" name="niveaux" value="6">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <button class="button1" onclick="newOefening()">
+                Volgende oefening
+            </button>
+
+            <div class="innerContent">
+                <h3 id="niveau" class="niveau"></h3>
+                <p id="gegeven" class="gegeven"></p>
+                <p id="solution"></p>
+                <p id="answer" class="answer"></p>
+            </div>
+
+            <button class="button3" onclick="ClearAll()">Alles wissen</button>
+            <button class="button3" onclick="Controleer()">Controleer</button>
+            <button class="button3" onclick="GeefOplossing()">Geef oplossing</button>
+
+            <button class="button2" onclick='window.location.href = "https\:\/\/www.youtube.com\/watch?v=96G1EF1OQz0"'
+            title="https://www.youtube.com/watch?v=96G1EF1OQz0">Uitleg som als gegeven</button>
+            <button class="button2" onclick='window.location.href = "https\:\/\/www.youtube.com\/watch?v=kBwA2gW3xtY"'
+            title="https://www.youtube.com/watch?v=kBwA2gW3xtY">Uitleg verhouding als gegeven</button>
+
+            <button class="homeButton" onclick='window.location.href = "index.html"'
+            title="Hoofdmenu">Terug naar hoofdmenu</button>
+            
+            <!--script src="Verdeling.js"></script-->
+            <script src="JS/OngelijkeVerdeling.js"></script>
+            <!-- sometimes you have to use this "trick" for parent element (content-wrapper) to have correct height -->
+            <div style="clear: both;"></div>
+        </div> 
+        <footer>
+            © Made by Yordi Van Nieuwenhuyse
+        </footer>
+        
+    </body>
+</html>

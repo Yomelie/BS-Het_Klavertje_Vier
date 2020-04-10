@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="NL">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=500, maximum-scale=1, minimum-scale=0.50, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="images/Logo.ico" />
+        
+        <Title>
+            Soorten driehoeken
+        </Title>
+
+        <!-- this includes css style file -->
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/SoortDriehoek.css">
+    </head>
+    <body>
+        <!-- main title -->
+        <h1>
+            Soorten driehoeken
+        </h1>
+
+        <!-- content holder -->
+        <div class="content-wrapper">
+            
+            <button class="homeButton" onclick='window.location.href = "index.html"'
+            title="Hoofdmenu">Terug naar hoofdmenu</button>
+
+            <div class="innerContent">
+                <p id="gegeven" class="gegeven"> Welke soort driehoek is dit?</p>
+                <canvas id="canvas" width=1000 height=1000></canvas>
+                <p id="solution" class="solution">
+                    <label class="hoek" id='lrecht'>Rechthoekig
+                        <input type="radio" name="hoek" value="recht"
+                        checked="checked" id="rrecht"oninput="inputChanged(this)">
+                    </label>
+                    <label class="hoek" id='lscherp'>Scherphoekig
+                        <input type="radio" name="hoek" value="scherp"
+                        id="rscherp"oninput="inputChanged(this)">
+                    </label>
+                    <label class="hoek" id='lstomp'>Stomphoekig
+                        <input type="radio" name="hoek" value="stomp"
+                        id="rstomp"oninput="inputChanged(this)">
+                    </label>
+                    <label class="zijde" id='longelijk'>Ongelijkzijdig
+                        <input type="radio" name="zijde" value="ongelijk"
+                        checked="checked" id="rongelijk" oninput="inputChanged(this)">
+                    </label>
+                    <label class="zijde" id='lbenig'>Gelijkbenig
+                        <input type="radio" name="zijde" value="benig"
+                        id="rbenig"oninput="inputChanged(this)">
+                    </label>
+                    <label class="zijde" id='lgelijk'>Gelijkzijdig
+                        <input type="radio" name="zijde" value="gelijk"
+                        id="rgelijk"oninput="inputChanged(this)">
+                    </label>
+                </p>
+                <p id="answer" class="answer"></p>
+            </div>
+
+            <button class="button2" onclick="Controleer()">Controleer</button>
+            <button class="button2" onclick="GeefOplossing()">Geef oplossing</button>
+            
+            <button class="button1" onclick="newOefening()">
+                Volgende oefening
+            </button>
+
+            <!--button class="button2" onclick='window.location.href = "https\:\/\/www.youtube.com\/watch?v=a1bst3jVup4"'
+            title="https://www.youtube.com/watch?v=a1bst3jVup4">Uitleg KGV</button>
+            <button class="button2" onclick='window.location.href = "https\:\/\/www.youtube.com\/watch?v=DfuaeEjnx-k"'
+            title="https://www.youtube.com/watch?v=DfuaeEjnx-k">Uitleg GGD</button-->
+
+            
+            <script src="JS/SoortDriehoek.js"></script>
+            <!-- sometimes you have to use this "trick" for parent element (content-wrapper) to have correct height -->
+            <div style="clear: both;"></div>
+        </div> 
+        <footer>
+            © Made by Yordi Van Nieuwenhuyse
+        </footer>
+        
+    </body>
+</html>

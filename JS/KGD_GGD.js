@@ -1,5 +1,5 @@
 /* Main */
-    const max = 100;
+    var max = 100;
     let antwoord = 0;
     newOefening();
 
@@ -11,22 +11,28 @@
         showGegeven(difficulty);
     }
     function Controleer(){
-        somethingChanged();        
-        let x = document.getElementById("inputAnswer");
-        let val = x.value;
-        let el = document.getElementById('answer')
+        let el = document.getElementById('answer');
+        if(el.innerHTML == 'Hier is de oplossing.' || 
+        el.innerHTML == 'Elaba, niet zeuren.')
+        {
+            el.innerHTML = 'Elaba, niet zeuren.';
+            el.style.color = 'red';
+        }else{
+            somethingChanged();        
+            let x = document.getElementById("inputAnswer");
+            let val = x.value;
 
-        if(val == antwoord){
-            x.style.color = "green";
-            el.style.cssText = "float: left;text-align: center;color: green";
-            el.innerHTML = "Proficiat, jouw antwoord is correct."
-        }
-        else{
-            x.style.color = "red";
-            AllesJuist = false;
-            el.style.cssText = "float: left;text-align: center;color: red";
-            el.innerHTML = "Jouw antwoord is niet correct, probeer opnieuw."
-        }
+            if(val == antwoord){
+                x.style.color = "green";
+                el.style.cssText = "float: left;text-align: center;color: green";
+                el.innerHTML = "Proficiat, jouw antwoord is correct."
+            }
+            else{
+                x.style.color = "red";
+                AllesJuist = false;
+                el.style.cssText = "float: left;text-align: center;color: red";
+                el.innerHTML = "Jouw antwoord is niet correct, probeer opnieuw."
+            }}
     }
     function ClearAll(){
         somethingChanged();
@@ -34,10 +40,12 @@
         x.value = "";
     }
     function GeefOplossing(){
+        let el = document.getElementById('answer');
         somethingChanged();
         let x = document.getElementById("inputAnswer");
         x.value = antwoord;
         Controleer();
+        el.innerHTML = 'Hier is de oplossing.';
     }
     function inputChanged(element){
         element.style.color = 'black';
@@ -54,20 +62,20 @@
                     getal1 = getRandom(2,Math.floor(max/8));
                     getal2 = getRandom(2,Math.floor(max/8));
                 }while(!getKGV(getal1,getal2))
-                gegeven = `Wat is het kleinst gemeenschappelijk veelvoud van ${getal1} en ${getal2}?`
+                gegeven = "Wat is het kleinst gemeenschappelijk veelvoud van "+getal1+" en "+getal2+"?";
                 break;
             case '2': //GGD  
                 do{
                     getal1 = getRandom(2,max);
                     getal2 = getRandom(2,max);
                 }while(!getGGD(getal1,getal2))
-                gegeven = `Wat is de grootste gemeenschappelijke deler van ${getal1} en ${getal2}?`
+                gegeven = "Wat is de grootste gemeenschappelijke deler van "+ getal1+" en "+getal2+"?";
                 break;
         }
         console.log(antwoord);        
         document.getElementById('gegeven').innerHTML = gegeven;
         let opl = document.getElementById('solution');
-        opl.innerHTML = `<label>Antwoord:<input id="inputAnswer" type="number" oninput="inputChanged(this)"></label><br/>`;
+        opl.innerHTML = "<label>Antwoord:<input id='inputAnswer' type='number' oninput='inputChanged(this)'></label><br/>";
     }
 
     function getKGV(getal1,getal2){
@@ -122,7 +130,9 @@
 
         if(mogelijkseNiveaux.length == 0){
             mogelijkseNiveaux.push(labels[0]['value']);
+            mogelijkseNiveaux.push(labels[1]['value']);
             labels[0]['checked'] = true;
+            labels[1]['checked'] = true;
         }
 
         return mogelijkseNiveaux[getRandom(0,mogelijkseNiveaux.length-1)];

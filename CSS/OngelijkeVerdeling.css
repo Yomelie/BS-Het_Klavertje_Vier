@@ -13,8 +13,8 @@
     .difficulty{
         position: relative;
         text-align: right;
-        width: calc(50%-5px);
-        margin: 10px 0 10px 5px;
+        width: calc(100%-5px);
+        margin: 50px 0 10px 5px;
         border-radius: 5px;
         border: #2c415d;
     }
